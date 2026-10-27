@@ -1,0 +1,29 @@
+{
+  "name": "velocity-systems",
+  "version": "1.0.0",
+  "description": "Official website for Velocity Systems — hybrid software solutions, enterprise microservices, and smart-home automation, with Paystack checkout.",
+  "author": "Muhammad Sanusi Nasir <sunusinasir@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "npx --yes serve ."
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "velocity-systems",
+    "hybrid-software",
+    "microservices",
+    "smart-home",
+    "paystack",
+    "offline-first"
+  ]
+}

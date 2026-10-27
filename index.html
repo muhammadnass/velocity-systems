@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B2A47" />
+  <title>Velocity Systems — Hybrid Software Solutions &amp; Enterprise Microservices</title>
+  <meta name="description" content="Velocity Systems builds offline-first, cloud-synced software, hardened enterprise microservices, and smart-home automation. Order fixed-price engineering packages online." />
+  <meta name="author" content="Muhammad Sanusi Nasir" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Velocity Systems — Hybrid Software Solutions" />
+  <meta property="og:description" content="Offline-first, cloud-synced software, enterprise microservices, and smart-home automation. Order engineering packages online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Paystack Inline SDK -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="Velocity Systems home">
+        <img src="assets/logo.svg" alt="Velocity Systems" class="brand-logo" width="200" height="54" />
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list" id="navList">
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#why" class="nav-link">Why Us</a></li>
+          <li><a href="#process" class="nav-link">Process</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1Zm0-20a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V2a1 1 0 0 1 1-1Zm11 11a1 1 0 0 1-1 1h-2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1ZM5 12a1 1 0 0 1-1 1H2a1 1 0 1 1 0-2h2a1 1 0 0 1 1 1Zm13.07 6.07a1 1 0 0 1 1.41 0l1.42 1.42a1 1 0 0 1-1.42 1.41l-1.41-1.41a1 1 0 0 1 0-1.42ZM3.1 3.1a1 1 0 0 1 1.41 0l1.42 1.42A1 1 0 1 1 4.5 5.93L3.1 4.52a1 1 0 0 1 0-1.42Zm15.97 1.42A1 1 0 1 1 20.49 3.1l-1.42 1.42a1 1 0 0 1-1.41-1.41ZM4.52 18.07a1 1 0 0 1 0 1.42L3.1 20.9a1 1 0 0 1-1.41-1.41l1.41-1.42a1 1 0 0 1 1.42 0Z"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M21.64 13a1 1 0 0 0-1.05-.14 8 8 0 0 1-9.45-9.45 1 1 0 0 0-1.19-1.19A10 10 0 1 0 22 14.05a1 1 0 0 0-.36-1.05Z"/></svg>
+        </button>
+
+        <a href="#services" class="btn btn-primary btn-sm nav-cta">Get Started</a>
+
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <img src="assets/logo.svg" alt="Velocity Systems" class="mobile-logo" width="170" />
+      <nav aria-label="Mobile">
+        <a href="#services" class="mobile-link">Services</a>
+        <a href="#why" class="mobile-link">Why Us</a>
+        <a href="#process" class="mobile-link">Process</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+      </nav>
+      <a href="#services" class="btn btn-primary btn-block">Get Started</a>
+      <div class="mobile-contact">
+        <a href="tel:+2349132726410">+234 913 272 6410</a>
+        <a href="mailto:sunusinasir@gmail.com">sunusinasir@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="overlay" id="overlay" hidden></div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Hybrid Software Engineering</span>
+          <h1 class="hero-title">
+            Software that works <span class="grad-text">online, offline,</span> and everywhere in between.
+          </h1>
+          <p class="hero-sub">
+            Velocity Systems designs offline-first, cloud-synced applications, hardened enterprise
+            microservices, and intelligent smart-home automation — engineered for resilience,
+            built for scale, and shipped on time.
+          </p>
+          <div class="hero-cta">
+            <a href="#services" class="btn btn-primary">Explore Packages</a>
+            <a href="#contact" class="btn btn-ghost">Talk to an Engineer</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>99.9%</strong><span>Sync Reliability</span></li>
+            <li><strong>24/7</strong><span>System Monitoring</span></li>
+            <li><strong>100%</strong><span>Deployment Ownership</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="glass-card">
+            <div class="glass-head">
+              <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+              <span class="glass-title">velocity-core / sync-engine</span>
+            </div>
+            <pre class="code-block"><code><span class="c-key">service</span> SyncEngine {
+  mode: <span class="c-str">"offline-first"</span>,
+  transport: [<span class="c-str">"WiFi"</span>, <span class="c-str">"RF-433"</span>, <span class="c-str">"Cloud"</span>],
+  conflictStrategy: <span class="c-str">"CRDT-merge"</span>,
+  encryption: <span class="c-str">"AES-256-GCM"</span>
+}
+
+<span class="c-fn">deploy</span>(SyncEngine) <span class="c-com">// ✓ healthy</span>
+</code></pre>
+            <div class="glass-badges">
+              <span class="chip">Offline-first</span>
+              <span class="chip">Microservices</span>
+              <span class="chip">Smart Home</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST STRIP ============ -->
+    <section class="trust-strip" aria-label="Capabilities">
+      <div class="container trust-row">
+        <span>API Engineering</span><i>•</i>
+        <span>Cloud Sync</span><i>•</i>
+        <span>Vulnerability Audits</span><i>•</i>
+        <span>RF / Wi-Fi Automation</span><i>•</i>
+        <span>Desktop &amp; Mobile</span>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES & PACKAGES ============ -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Services &amp; Packages</span>
+          <h2 class="section-title">Fixed-price engineering. No surprises.</h2>
+          <p class="section-lead">
+            Transparent, productized microservices with defined scope and deliverables.
+            Book securely online and we start the moment payment clears.
+          </p>
+        </header>
+
+        <div class="pricing-grid">
+          <!-- Card 1 -->
+          <article class="price-card reveal">
+            <div class="price-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M8.7 15.9 4.8 12l3.9-3.9L7.3 6.7 2 12l5.3 5.3 1.4-1.4Zm6.6 0 3.9-3.9-3.9-3.9 1.4-1.4L22 12l-5.3 5.3-1.4-1.4Z"/></svg>
+            </div>
+            <h3 class="price-name">Software Development &amp; Hybrid Systems</h3>
+            <p class="price-desc">
+              Custom offline-first and cloud-synced application development, mobile/desktop
+              architecture, API engineering, and complete production deployment.
+            </p>
+            <ul class="price-features">
+              <li>Offline-first data layer &amp; conflict resolution</li>
+              <li>Cross-platform mobile &amp; desktop builds</li>
+              <li>REST / real-time API engineering</li>
+              <li>CI/CD setup &amp; full deployment</li>
+            </ul>
+            <div class="price-value">
+              <span class="currency">₦</span><span class="amount">750,000</span>
+            </div>
+            <button
+              class="btn btn-primary btn-block order-btn"
+              data-service="Software Development &amp; Hybrid Systems"
+              data-amount="750000">
+              Order Now
+            </button>
+          </article>
+
+          <!-- Card 2 (featured) -->
+          <article class="price-card featured reveal">
+            <span class="badge-popular">Most Requested</span>
+            <div class="price-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 1 3 5v6c0 5.25 3.6 10.17 9 11 5.4-.83 9-5.75 9-11V5l-9-4Zm-1.2 14.6L7 11.8l1.4-1.4 2.4 2.4 5-5L17.2 9l-6.4 6.6Z"/></svg>
+            </div>
+            <h3 class="price-name">Software Security &amp; Architecture Review</h3>
+            <p class="price-desc">
+              Comprehensive code audit, offline/online data-sync resilience inspection,
+              vulnerability scanning, and an architectural hardening report.
+            </p>
+            <ul class="price-features">
+              <li>Full source code &amp; dependency audit</li>
+              <li>Sync resilience &amp; failure-mode testing</li>
+              <li>Automated vulnerability scanning</li>
+              <li>Prioritised hardening report</li>
+            </ul>
+            <div class="price-value">
+              <span class="currency">₦</span><span class="amount">150,000</span>
+            </div>
+            <button
+              class="btn btn-primary btn-block order-btn"
+              data-service="Software Security &amp; Architecture Review"
+              data-amount="150000">
+              Order Now
+            </button>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="price-card reveal">
+            <div class="price-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3L12 3Zm0 2.7 5 4.5V18h-2v-6H9v6H7v-7.8l5-4.5Z"/></svg>
+            </div>
+            <h3 class="price-name">Smart Home Hardware &amp; Automation</h3>
+            <p class="price-desc">
+              End-to-end integration of residential/commercial smart hardware, local RF/Wi-Fi
+              relay receivers, smart access controllers, and security systems.
+            </p>
+            <ul class="price-features">
+              <li>RF-433 / Wi-Fi relay receiver setup</li>
+              <li>Smart access &amp; entry controllers</li>
+              <li>CCTV &amp; security system integration</li>
+              <li>Local-first automation dashboards</li>
+            </ul>
+            <div class="price-value">
+              <span class="currency">₦</span><span class="amount">250,000</span>
+            </div>
+            <button
+              class="btn btn-primary btn-block order-btn"
+              data-service="Smart Home Hardware &amp; Automation Setup"
+              data-amount="250000">
+              Order Now
+            </button>
+          </article>
+        </div>
+
+        <p class="pricing-note">
+          🔒 Payments are processed securely by <strong>Paystack</strong>. All prices are in Nigerian Naira (NGN).
+          Need something custom? <a href="#contact">Request a tailored quote →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section class="section section-alt" id="why">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Why Velocity</span>
+          <h2 class="section-title">Engineering that survives the real world.</h2>
+          <p class="section-lead">Most software assumes a perfect connection. Ours doesn't.</p>
+        </header>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="feature-ic">⚡</div>
+            <h3>Offline-First by Design</h3>
+            <p>Your apps keep working with zero connectivity and reconcile cleanly the moment they sync back to the cloud.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-ic">🧩</div>
+            <h3>Modular Microservices</h3>
+            <p>Independently deployable services that scale what needs scaling — without rewriting the whole system.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-ic">🛡️</div>
+            <h3>Security-Hardened</h3>
+            <p>Encryption, audited dependencies, and failure-mode testing baked in from the first commit, not bolted on later.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-ic">🏠</div>
+            <h3>Software + Hardware</h3>
+            <p>We bridge code and the physical world — RF relays, smart controllers, and automation that just works.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-ic">📦</div>
+            <h3>Full Deployment Ownership</h3>
+            <p>From architecture to CI/CD to going live — we ship it, monitor it, and hand you a system that runs.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-ic">🎯</div>
+            <h3>Fixed Scope, Fixed Price</h3>
+            <p>Productized packages mean you know exactly what you get and exactly what it costs. Before you pay.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section" id="process">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">How It Works</span>
+          <h2 class="section-title">From order to launch in four steps.</h2>
+        </header>
+
+        <ol class="process-grid">
+          <li class="process-step reveal">
+            <span class="step-num">01</span>
+            <h3>Book &amp; Pay</h3>
+            <p>Choose a package and pay securely online via Paystack. Checkout takes under a minute.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="step-num">02</span>
+            <h3>Discovery Call</h3>
+            <p>We map your requirements, constraints, and success metrics into a concrete delivery plan.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="step-num">03</span>
+            <h3>Build &amp; Review</h3>
+            <p>Iterative engineering with transparent milestones and working demos at every stage.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="step-num">04</span>
+            <h3>Deploy &amp; Support</h3>
+            <p>We ship to production, monitor health, and hand over clean documentation and ownership.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section-alt" id="about">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <img src="assets/logo-mark.svg" alt="Velocity Systems emblem" class="about-mark" width="220" height="200" />
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">About Velocity Systems</span>
+          <h2 class="section-title">Built by engineers who ship.</h2>
+          <p>
+            Velocity Systems is a hybrid software and automation studio specialising in the
+            hard problems most teams avoid: systems that must work with or without the internet,
+            data that must never be lost, and hardware that must respond instantly.
+          </p>
+          <p>
+            We combine rigorous architecture, security-first engineering, and real-world hardware
+            integration to deliver software and smart environments that are dependable under
+            pressure — for startups, enterprises, and homes alike.
+          </p>
+          <ul class="about-points">
+            <li>Offline-first &amp; cloud-sync specialists</li>
+            <li>Enterprise microservice architecture</li>
+            <li>Residential &amp; commercial automation</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Start a Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <span class="eyebrow">Get In Touch</span>
+          <h2 class="section-title">Let's build something resilient.</h2>
+          <p class="section-lead">
+            Questions about a package, or need a custom quote? Reach out directly — we respond fast.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-ic" aria-hidden="true">👤</span>
+              <div><strong>Muhammad Sanusi Nasir</strong><span>Founder &amp; Lead Engineer</span></div>
+            </li>
+            <li>
+              <span class="contact-ic" aria-hidden="true">📞</span>
+              <div><strong>Phone</strong><a href="tel:+2349132726410">+234 913 272 6410</a></div>
+            </li>
+            <li>
+              <span class="contact-ic" aria-hidden="true">✉️</span>
+              <div><strong>Email</strong><a href="mailto:sunusinasir@gmail.com">sunusinasir@gmail.com</a></div>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cName">Full Name</label>
+            <input type="text" id="cName" name="name" placeholder="Your full name" required />
+            <small class="err" data-for="cName"></small>
+          </div>
+          <div class="field">
+            <label for="cEmail">Email Address</label>
+            <input type="email" id="cEmail" name="email" placeholder="you@example.com" required />
+            <small class="err" data-for="cEmail"></small>
+          </div>
+          <div class="field">
+            <label for="cPhone">Phone Number</label>
+            <input type="tel" id="cPhone" name="phone" placeholder="+234 ..." required />
+            <small class="err" data-for="cPhone"></small>
+          </div>
+          <div class="field">
+            <label for="cMsg">How can we help?</label>
+            <textarea id="cMsg" name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+            <small class="err" data-for="cMsg"></small>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          <p class="form-hint">This opens your email client pre-filled — or call us directly above.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-white.svg" alt="Velocity Systems" class="footer-logo" width="210" height="56" />
+        <p>Hybrid software solutions &amp; enterprise microservices. Resilient by design, deployed with ownership.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Hybrid Software Development</a>
+        <a href="#services">Security &amp; Architecture Review</a>
+        <a href="#services">Smart Home Automation</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#why">Why Us</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+2349132726410">+234 913 272 6410</a>
+        <a href="mailto:sunusinasir@gmail.com">sunusinasir@gmail.com</a>
+        <span class="footer-owner">Muhammad Sanusi Nasir</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> Velocity Systems. All rights reserved.</p>
+      <p class="footer-secure">🔒 Secured payments by Paystack</p>
+    </div>
+  </footer>
+
+  <!-- ============ PAYMENT (ORDER) MODAL ============ -->
+  <div class="modal" id="orderModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+    <div class="modal-card">
+      <button class="modal-close" id="orderClose" aria-label="Close">&times;</button>
+      <h3 id="orderTitle" class="modal-title">Complete Your Order</h3>
+      <div class="order-summary">
+        <span id="summaryService" class="summary-service">Service</span>
+        <span id="summaryAmount" class="summary-amount">₦0</span>
+      </div>
+      <form id="orderForm" novalidate>
+        <div class="field">
+          <label for="oName">Full Name</label>
+          <input type="text" id="oName" name="name" placeholder="e.g. Aisha Bello" required />
+          <small class="err" data-for="oName"></small>
+        </div>
+        <div class="field">
+          <label for="oEmail">Email Address</label>
+          <input type="email" id="oEmail" name="email" placeholder="you@example.com" required />
+          <small class="err" data-for="oEmail"></small>
+        </div>
+        <div class="field">
+          <label for="oPhone">Phone Number</label>
+          <input type="tel" id="oPhone" name="phone" placeholder="+234 ..." required />
+          <small class="err" data-for="oPhone"></small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="payBtn">
+          <span class="pay-label">Pay</span> <span id="payAmount">₦0</span>
+        </button>
+        <p class="form-hint">You'll be redirected to Paystack's secure checkout.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ SUCCESS MODAL ============ -->
+  <div class="modal" id="successModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="modal-card success-card">
+      <button class="modal-close" id="successClose" aria-label="Close">&times;</button>
+      <div class="success-check" aria-hidden="true">
+        <svg viewBox="0 0 52 52" width="64" height="64"><circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M14 27l8 8 16-18"/></svg>
+      </div>
+      <h3 id="successTitle" class="modal-title">Payment Successful 🎉</h3>
+      <p class="success-text">
+        Thank you — your order for <strong id="successService">your package</strong> is confirmed.
+      </p>
+      <div class="success-ref">
+        <span>Transaction Reference</span>
+        <code id="successRef">—</code>
+      </div>
+      <p class="success-next">
+        <strong>Next step:</strong> Our team will contact you within 24 hours to schedule your
+        discovery call and kick off the project. A receipt has been sent to your email.
+      </p>
+      <button class="btn btn-primary btn-block" id="successDone">Done</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

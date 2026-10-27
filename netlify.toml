@@ -1,0 +1,14 @@
+# Netlify deploy configuration — static site (no build step needed)
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
