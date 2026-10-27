@@ -1,7 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     { "source": "/webhook", "destination": "/api/webhook" },
     { "source": "/verify/:reference", "destination": "/api/verify?reference=:reference" }
