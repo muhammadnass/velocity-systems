@@ -13,7 +13,7 @@
      (The SECRET key lives only in server.js / .env — never here.)
   ----------------------------------------------------------- */
   var CONFIG = {
-    PAYSTACK_PUBLIC_KEY: "pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    PAYSTACK_PUBLIC_KEY: "pk_test_47e7a85bd532c21de654375a25c56d235b2b4bfe",
     CURRENCY: "NGN",
     BUSINESS_EMAIL: "sunusinasir@gmail.com"
   };
