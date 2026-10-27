@@ -261,11 +261,11 @@ html[data-theme="dark"] .c-str { color: #6fd7a3; } html[data-theme="dark"] .c-fn
 .section-lead { color: var(--text-soft); font-size: 1.08rem; margin-top: .9rem; }
 
 /* ---------- Pricing ---------- */
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; align-items: stretch; }
+.pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.3rem; align-items: stretch; }
 .price-card {
   position: relative; display: flex; flex-direction: column;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 2rem 1.8rem; box-shadow: var(--shadow-sm);
+  padding: 1.8rem 1.5rem; box-shadow: var(--shadow-sm);
   transition: transform var(--t), box-shadow var(--t), border-color var(--t);
 }
 .price-card::before {
@@ -288,7 +288,7 @@ html[data-theme="dark"] .c-str { color: #6fd7a3; } html[data-theme="dark"] .c-fn
   width: 58px; height: 58px; border-radius: 15px; display: grid; place-items: center;
   background: color-mix(in srgb, var(--blue-500) 14%, transparent); color: var(--blue-600); margin-bottom: 1.2rem;
 }
-.price-name { font-size: 1.28rem; margin-bottom: .7rem; }
+.price-name { font-size: 1.18rem; margin-bottom: .7rem; }
 .price-desc { color: var(--text-soft); font-size: .96rem; margin-bottom: 1.3rem; }
 .price-features { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.6rem; }
 .price-features li { position: relative; padding-left: 1.7rem; font-size: .93rem; color: var(--text-soft); }
@@ -299,7 +299,7 @@ html[data-theme="dark"] .c-str { color: #6fd7a3; } html[data-theme="dark"] .c-fn
 }
 .price-value { display: flex; align-items: baseline; gap: .15rem; margin-top: auto; margin-bottom: 1.3rem; }
 .price-value .currency { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--text); }
-.price-value .amount { font-family: var(--font-head); font-size: 2.6rem; font-weight: 800; color: var(--text); letter-spacing: -1px; line-height: 1; }
+.price-value .amount { font-family: var(--font-head); font-size: 2.1rem; font-weight: 800; color: var(--text); letter-spacing: -.5px; line-height: 1; }
 .pricing-note { text-align: center; margin-top: 2.4rem; color: var(--text-soft); font-size: .95rem; }
 .pricing-note a { color: var(--blue-600); font-weight: 600; }
 .pricing-note a:hover { text-decoration: underline; }
@@ -435,7 +435,6 @@ html[data-theme="dark"] .c-str { color: #6fd7a3; } html[data-theme="dark"] .c-fn
   .hero-visual { order: -1; }
   .glass-card { transform: none; max-width: 520px; }
   .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-  .price-card.featured { grid-column: span 2; }
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -681,6 +680,34 @@ html[data-theme="dark"] .c-str { color: #6fd7a3; } html[data-theme="dark"] .c-fn
               class="btn btn-primary btn-block order-btn"
               data-service="Smart Home Hardware &amp; Automation Setup"
               data-amount="250000">
+              Order Now
+            </button>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="price-card reveal">
+            <div class="price-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+            </div>
+            <h3 class="price-name">Enterprise Solution</h3>
+            <p class="price-desc">
+              A full-scale engagement for organisations operating at scale: end-to-end
+              microservice architecture, multi-system integration, a dedicated engineering
+              team, and SLA-backed support from design through to long-term operation.
+            </p>
+            <ul class="price-features">
+              <li>Dedicated engineering team</li>
+              <li>End-to-end microservice architecture</li>
+              <li>Multi-system &amp; legacy integration</li>
+              <li>Priority, SLA-backed support</li>
+            </ul>
+            <div class="price-value">
+              <span class="currency">₦</span><span class="amount">2,200,000</span>
+            </div>
+            <button
+              class="btn btn-primary btn-block order-btn"
+              data-service="Enterprise Solution"
+              data-amount="2200000">
               Order Now
             </button>
           </article>
