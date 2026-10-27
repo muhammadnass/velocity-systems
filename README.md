@@ -5,6 +5,14 @@ Production-ready, fully responsive website for **Velocity Systems** — hybrid (
 **Owner:** Muhammad Sanusi Nasir
 **Contact:** +234 913 272 6410 · sunusinasir@gmail.com
 
+### 🚀 One-click deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/velocity-systems&env=PAYSTACK_SECRET_KEY&envDescription=Paystack%20secret%20key%20for%20webhook%20verification&envLink=https://dashboard.paystack.com/%23/settings/developers)
+
+> Replace `YOUR_USERNAME` in the button link (in this README) with your GitHub
+> username once the repo is pushed. See **"Deploy to Vercel"** below for the
+> full walkthrough.
+
 ---
 
 ## ✨ Features
@@ -23,25 +31,35 @@ Production-ready, fully responsive website for **Velocity Systems** — hybrid (
 
 ```
 velocity-systems/
-├── index.html            # Semantic markup: hero, services, about, contact, modals
+├── index.html                  # Semantic markup: hero, services, about, contact, modals
 ├── css/
-│   └── styles.css        # Design system, responsive layout, themes, animations
+│   └── styles.css              # Design system, responsive layout, themes, animations
 ├── js/
-│   └── app.js            # Menu, theme, modals, validation, Paystack integration
+│   └── app.js                  # Menu, theme, modals, validation, Paystack integration
 ├── assets/
-│   ├── logo.svg          # Primary logo (light backgrounds)
-│   ├── logo-white.svg    # Logo for dark backgrounds / footer
-│   ├── logo-mark.svg     # Icon-only mark
-│   ├── logo.png          # Raster logo export
+│   ├── logo.svg                # Primary logo (light backgrounds)
+│   ├── logo-white.svg          # Logo for dark backgrounds / footer
+│   ├── logo-mark.svg           # Icon-only mark
+│   ├── logo.png                # Raster logo export
 │   ├── favicon.png
 │   └── apple-touch-icon.png
-├── server.js             # Optional Express server + /webhook HMAC verification
+├── api/                        # Vercel serverless functions (deploy to Vercel = live backend)
+│   ├── webhook.js              #   POST /webhook   — Paystack HMAC-SHA512 verification
+│   └── verify.js               #   GET  /verify/:ref — server-side transaction check
+├── server.js                   # Same backend as a standalone Express app (local / VPS / Render)
+├── .github/
+│   └── workflows/validate.yml  # CI: syntax-checks every push & PR
 ├── package.json
-├── .env.example          # Environment variable template
-├── vercel.json           # Vercel config
-├── netlify.toml          # Netlify config
+├── .nvmrc                      # Pins Node 20
+├── .env.example                # Environment variable template
+├── vercel.json                 # Vercel config + route rewrites for /webhook & /verify
+├── netlify.toml                # Netlify config
 └── README.md
 ```
+
+> **Two interchangeable backends, one codebase:** `api/*` runs automatically on
+> Vercel (no server to manage); `server.js` is the identical logic as a portable
+> Express app for local dev, a VPS, or Render. Pick whichever host you deploy to.
 
 ---
 
@@ -105,14 +123,20 @@ The Express server exposes **`POST /webhook`**. It reads the raw request body,
 recomputes an **HMAC-SHA512** using your `PAYSTACK_SECRET_KEY`, and compares it
 (constant-time) with the `x-paystack-signature` header before trusting the event.
 
-To use it:
+The same verification runs two ways — pick one:
 
-1. Deploy the server somewhere that runs Node (Render, Railway, a VPS, etc.).
-2. In the Paystack Dashboard, set the **Webhook URL** to
-   `https://your-domain.com/webhook`.
-3. On a verified `charge.success` event, fulfil the order inside the
-   `charge.success` case in `server.js` (save to a DB, email the client, notify
-   your team — the hook-points are marked with `TODO`).
+- **On Vercel (easiest):** `api/webhook.js` is live automatically once deployed.
+  Just set `PAYSTACK_SECRET_KEY` in the Vercel dashboard.
+- **On any Node host (Render/VPS):** run `server.js`, which exposes the identical
+  `/webhook` route.
+
+Then:
+
+1. In the Paystack Dashboard → **Settings → Webhooks**, set the **Webhook URL** to
+   `https://your-app.vercel.app/webhook` (or your own domain).
+2. On a verified `charge.success` event, fulfil the order where the `TODO` comment
+   sits — in `api/webhook.js` (Vercel) or `server.js` (Express): save to a DB,
+   email the client, notify your team, trigger kickoff.
 
 There is also a helper route **`GET /verify/:reference`** to confirm a single
 transaction server-side via the Paystack REST API.
@@ -121,16 +145,48 @@ transaction server-side via the Paystack REST API.
 
 ## 🚀 Step 4 — Deploy
 
-### Option A — Vercel (recommended, free)
+### Option A — GitHub + Vercel (recommended, free, one-click)
+
+This repo is pre-configured so Vercel deploys the **static site _and_ the
+serverless webhook** together, with zero build setup.
+
+**1. Push to GitHub**
 
 ```bash
-npm install -g vercel
-vercel          # follow the prompts; accept defaults
-vercel --prod   # deploy to production
+# From inside the project folder (git is already initialised with a first commit)
+git remote add origin https://github.com/YOUR_USERNAME/velocity-systems.git
+git branch -M main
+git push -u origin main
 ```
 
-Or connect the GitHub repo at **vercel.com → New Project**. `vercel.json` is
-already included.
+> No repo yet? Create an empty one at **github.com/new** named
+> `velocity-systems` (don't add a README/license), then run the commands above.
+> If you prefer the GitHub CLI: `gh repo create velocity-systems --public --source=. --push`.
+
+**2. Import into Vercel**
+
+- Go to **vercel.com → Add New → Project**, pick the `velocity-systems` repo, and
+  click **Deploy** (Framework Preset: *Other* — detected automatically).
+- Or use the **Deploy with Vercel** button at the top of this README after
+  swapping in your GitHub username.
+
+**3. Add your secret key**
+
+In **Vercel → Project → Settings → Environment Variables** add:
+
+| Key                   | Value                              |
+|-----------------------|------------------------------------|
+| `PAYSTACK_SECRET_KEY` | `sk_live_...` (or `sk_test_...`)   |
+
+Redeploy once so the variable is picked up. Your live endpoints are then:
+
+- Webhook: `https://your-app.vercel.app/webhook`
+- Verify:  `https://your-app.vercel.app/verify/REFERENCE`
+
+**4. Every future `git push` to `main` auto-deploys.** Pull requests get their
+own preview URL automatically.
+
+> Still set your **public** key in `js/app.js` (that one lives in the browser).
 
 ### Option B — Netlify (free)
 
@@ -145,8 +201,10 @@ already included.
 3. **Build command:** `npm install` · **Start command:** `npm start`.
 4. Add `PAYSTACK_SECRET_KEY` under **Environment**.
 
-> **Static hosts (Vercel/Netlify) serve the site perfectly**, but they don't run
-> `server.js`. Use **Render** (or any Node host) if you need the live `/webhook`.
+> **Vercel runs the webhook for you** via `api/*` serverless functions — no
+> separate host needed. **Netlify** serves the static site but won't run
+> `server.js`; for a live webhook on Netlify use a Netlify Function, or use
+> Vercel/Render instead.
 
 ---
 
